@@ -1,0 +1,84 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.backLink {
+    color: hsl(0, 0%, 0%);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.title {
+    color: #FF6F00;
+    font-size: 32px;
+}
+
+.searchForm {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.searchInput {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #FF6F00;
+    border-radius: 4px;
+}
+
+.backButton {
+    padding: 10px 10px;
+    margin-left: 0px;
+    font-size: 16px;
+    background-color: #ff6f00;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.searchButton {
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    background-color: #FF6F00;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.resultsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.resultsTable th, .resultsTable td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.resultsTable th {
+    background-color: #FF6F00;
+    color: #fff;
+}
+
+.resultsTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

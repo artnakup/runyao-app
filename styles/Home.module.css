@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* Full height of the viewport */
+    text-align: center;
+    background-image: url('../pages/pic/WALL001.jpg'); /* Update this path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.title {
+    font-size: 36px;
+    color: #FF6F00;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.searchLink {
+    display: inline-block;
+    padding: 20px 20px;
+    font-size: 32px;
+    background-color: #FF6F00;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.searchLink:hover {
+    background-color: #e65c00;
+}
+
+

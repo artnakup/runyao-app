@@ -1,18 +1,26 @@
-import useSWR from 'swr';
 import Link from 'next/link';
+import styles from '../styles/Home.module.css';
+import Image from 'next/image';
+import NavItems from './utils/NavItems';
+import { FC } from 'react';
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+interface Props {}
 
-export default function Home() {
-  const { data, error } = useSWR('/api/sheets', fetcher);
+const Home: FC<Props> = (props) => {
 
-  return (
-    <div className="flex flex-col p-4 min-h-screen w-full">
-      <div>
-        <Link href="/search"className="text-4xl font-bold text-center my-2 selection:rounded-xl">
-          <h1>Search Runner</h1>
-        </Link>
-      </div>
-    </div>
-  );
+    return (
+        <div>
+          <NavItems />
+          <div className={styles.container}>
+            
+            </div>
+        </div>
+ 
+    );
+};
+
+export default Home;
+function useState(arg0: number): [any, any] {
+  throw new Error('Function not implemented.');
 }
+
