@@ -64,7 +64,7 @@ const SearchPage: React.FC<SearchPageProps> = ({ initialData }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    const initialData = await readSheet('A1:F6'); // Include the header row in the initial data
+    const initialData = await readSheet('A3:F6'); // Include the header row in the initial data
     return { props: { initialData } };
 };
 
