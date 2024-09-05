@@ -10,13 +10,13 @@ const Navbar: React.FC = () => {
                     <Link href="/">หน้าหลัก</Link>
                 </li>
                 <li className={styles.navItem}>
+                    <Link href="https://forms.gle/DbMjaf6DKZDvAqAS7">สมัครวิ่งแปลงยาวฮาล์ฟมาราธอน 2024</Link>
+                </li>
+                <li className={styles.navItem}>
                     <Link href="/search">ตรวจสอบสถานะการสมัคร</Link>
                 </li>
                 <li className={styles.navItem}>
-                    <Link href="/">งานวิ่ง</Link>
-                </li>
-                <li className={styles.navItem}>
-                    <Link href="/">เกี่ยวกับเรา</Link>
+                    <Link href="https://www.facebook.com/runyao.plaengyao">เกี่ยวกับเรา</Link>
                 </li>
             </ul>
         </nav>

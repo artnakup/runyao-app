@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #333;
+    background-color: #232323;
     padding: 10px 20px;
     display: flex;
     justify-content: center;
@@ -8,19 +8,21 @@
 .navList {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     margin: 0;
     padding: 0;
 }
 
 .navItem {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .navItem a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: semi-bold;
+    position: relative;
+    padding: 10px 0;
 }
 
 .navItem a:hover {

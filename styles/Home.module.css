@@ -6,9 +6,11 @@
     height: 90vh; /* Full height of the viewport */
     text-align: center;
     background-image: url('../pages/pic/WALL001.jpg'); /* Update this path to your image */
-    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
 }
 
 .title {
