@@ -36,7 +36,7 @@ const SearchPage: React.FC<SearchPageProps> = ({ initialData }) => {
   }));
 
   // Prepare rows for the DataGrid, where each row is given an `id` required by DataGrid
-  const rows = searchResults.slice(1).map((row, rowIndex) => ({
+  const rows = searchResults.slice(0).map((row, rowIndex) => ({
     id: rowIndex,
     ...row.reduce((acc, cell, cellIndex) => {
       acc[`column${cellIndex}`] = cell;
@@ -65,7 +65,7 @@ const SearchPage: React.FC<SearchPageProps> = ({ initialData }) => {
       <form onSubmit={handleSearch} className={styles.searchForm}>
         <input
           name="query"
-          placeholder="กรุณากรอกชื่อหรือนามสกุล"
+          placeholder="กรุณากรอก ชื่อ-นามสกุล ภาษาไทย หรือ ภาษาอังกฤษ ตามที่ท่านสมัครไว้"
           className={styles.searchInput}
         />
         <button type="submit" className={styles.searchButton}>
@@ -100,7 +100,7 @@ const SearchPage: React.FC<SearchPageProps> = ({ initialData }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const initialData = await readSheet("A3:G6"); // Include the header row in the initial data
+  const initialData = await readSheet("A3:G3"); // Include the header row in the initial data
   return { props: { initialData } };
 };
 
