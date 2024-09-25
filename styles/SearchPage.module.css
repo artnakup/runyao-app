@@ -1,7 +1,7 @@
 .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 8px;
     background-color: #fff;
     color: #333;
     font-family: Arial, sans-serif;
@@ -26,7 +26,7 @@
     align-items: center; /* Vertically center */
     position: relative;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
 }
 
 .topImage {
@@ -35,7 +35,7 @@
 }
 
 .bottomImage {
-    padding-top: 40px;
+    padding-top: 1px;
     max-width: 25%; /* Ensure image is responsive */
     height: auto; /* Maintain aspect ratio */
 }
@@ -48,13 +48,14 @@
     padding: 20px;
 }
 .backLink {
-    padding-right: 40px;
+    padding-top: 0px;
+    padding-right: 20px;
     color: hsl(0, 0%, 0%);
     text-decoration: none;
     font-weight: bold;
     position: absolute;
     right: 0; /* Align button to the far right */
-    top: 50%;
+    /* top: 50%; */
     transform: translateY(-50%); /* Center the button vertically */
 
 }
@@ -75,8 +76,8 @@
 
 .backButton {
     padding: 10px 10px;
-    margin-left: 0px;
-    margin-top: 20px;
+    /* margin-left: 0px;
+    margin-top: 0px; */
     font-size: 16px;
     background-color: #ff6f00;
     color: #ffffff;

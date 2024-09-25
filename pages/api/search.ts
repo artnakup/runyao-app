@@ -13,7 +13,7 @@ export default async function handler(
         return res.status(200).json({ results: [] });
     }
 
-    const range = `A4:F1000`; // Adjust as needed
+    const range = `A4:G1000`; // Adjust as needed
     const data = await readSheet(range);
 
     // Filter out empty rows and perform the search

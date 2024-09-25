@@ -5,6 +5,7 @@ import Link from "next/link";
 import styles from "../styles/SearchPage.module.css"; // Assuming you create a CSS module for styles
 import Image from "next/image";
 import Head from "next/head";
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 interface SearchPageProps {
   initialData: string[][];
@@ -26,6 +27,22 @@ const SearchPage: React.FC<SearchPageProps> = ({ initialData }) => {
     setSearchResults(data.results);
     setIsSearched(true); // Mark that a search has been performed
   };
+
+  // Define the columns for DataGrid based on your initialData headers
+  const columns: GridColDef[] = initialData[0].map((header, index) => ({
+    field: `column${index}`,
+    headerName: header,
+    flex: 1,
+  }));
+
+  // Prepare rows for the DataGrid, where each row is given an `id` required by DataGrid
+  const rows = searchResults.slice(1).map((row, rowIndex) => ({
+    id: rowIndex,
+    ...row.reduce((acc, cell, cellIndex) => {
+      acc[`column${cellIndex}`] = cell;
+      return acc;
+    }, {} as Record<string, string>)
+  }));
 
   return (
     <div className={styles.container}>
@@ -55,26 +72,16 @@ const SearchPage: React.FC<SearchPageProps> = ({ initialData }) => {
           ค้นหา
         </button>
       </form>
-      <table className={styles.resultsTable}>
-        <thead>
-          <tr>
-            {initialData[0]?.map((header, index) => (
-              <th key={index}>{header}</th>
-            ))}
-          </tr>
-        </thead>
-        {isSearched && (
-          <tbody>
-            {searchResults.slice(0).map((row, index) => (
-              <tr key={index}>
-                {row.map((cell, cellIndex) => (
-                  <td key={cellIndex}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        )}
-      </table>
+
+      {isSearched && (
+        <div style={{ height: 400, width: '100%' }}>
+          <DataGrid
+            rows={rows}
+            columns={columns}
+          />
+        </div>
+      )}
+
       <div className={styles.imageContainerdown}>
         <Image
           src="/LOGO242.jpg"
@@ -93,7 +100,7 @@ const SearchPage: React.FC<SearchPageProps> = ({ initialData }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const initialData = await readSheet("A3:F6"); // Include the header row in the initial data
+  const initialData = await readSheet("A3:G6"); // Include the header row in the initial data
   return { props: { initialData } };
 };
 
